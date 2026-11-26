@@ -18,12 +18,30 @@
             <a href="{{ route('enrollments.create') }}" class="btn btn-success">
                 Daftar Kursus
             </a>
+            <a href="{{ route('courses.index') }}" class="btn btn-outline-secondary">
+                Lihat Semua Kursus
+            </a>
         </div>
         <div class="col-lg-5">
             <img src="{{ asset('images/hero-kursus.jpg') }}"
                  alt="Ilustrasi kelas KursusKu"
                  class="img-fluid rounded-4">
         </div>
+    </div>
+</section>
+
+<section class="mb-4">
+    <div class="row g-3">
+        @foreach ($stats as $label => $value)
+            <div class="col-6 col-md-3">
+                <div class="card shadow-sm text-center h-100">
+                    <div class="card-body">
+                        <div class="display-6 fw-bold">{{ $value }}</div>
+                        <div class="text-muted">{{ $label }}</div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 </section>
 
